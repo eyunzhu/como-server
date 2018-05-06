@@ -4,9 +4,9 @@
  */
 	include("../conn.php");
 	mysqli_query($conn,"set names utf8");	
-	$result=mysqli_query($conn,"select * from adverInfo");
+	$result=mysqli_query($conn,"select * from adverinfo");
 	$jarr = array();
-	while ($rows=mysqli_fetch_array($result,MYSQL_ASSOC)){
+	while ($rows=mysqli_fetch_array($result)){
 	    $count=count($rows);//不能在循环语句中，由于每次删除 row数组长度都减小  
 	    for($i=0;$i<$count;$i++){  
 	        unset($rows[$i]);//删除冗余数据  
