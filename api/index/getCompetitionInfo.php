@@ -1,9 +1,9 @@
 <?php	
 /*
- * 返回首页顶部轮转广告
+ * 返回竞赛信息  表 competitioninfo 
  */
-	include("../conn.php");
-	$result=mysqli_query($conn,"select * from adverinfo");
+	include("../conn.php");	
+	$result=mysqli_query($conn,"select * from competitioninfo");
 	$jarr = array();
 	while ($rows=mysqli_fetch_array($result)){
 	    $count=count($rows);//不能在循环语句中，由于每次删除 row数组长度都减小  

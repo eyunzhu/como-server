@@ -3,7 +3,6 @@
  * 返回首页中部导航信息
  */	
 	include("../conn.php");
-	mysqli_query($conn,"set names utf8");	
 	$result=mysqli_query($conn,"select * from centernav");
 	$jarr = array();
 	while ($rows=mysqli_fetch_array($result,MYSQL_ASSOC)){
@@ -13,6 +12,6 @@
 	    }
 	    array_push($jarr,$rows);
 	}	
-	echo $str=json_encode($jarr);//将数组进行json编码
+	echo $str=json_encode($jarr,JSON_UNESCAPED_UNICODE);//将数组进行json编码
 
 ?>
